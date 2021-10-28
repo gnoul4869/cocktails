@@ -61,13 +61,10 @@ const SingleCocktail = () => {
         return <Loading />;
     }
     if (!cocktail) {
-        return (
-            <h2 className="section-title">No cocktail found with id ${id}</h2>
-        );
+        return <h2 className="section-title">No cocktail found with id ${id}</h2>;
     }
 
-    const { name, image, info, category, glass, instructions, ingredients } =
-        cocktail;
+    const { name, image, info, category, glass, instructions, ingredients } = cocktail;
     return (
         <section className="section cocktail-section">
             <Link to="/" className="btn btn-primary">
@@ -100,9 +97,7 @@ const SingleCocktail = () => {
                     <p>
                         <span className="drink-data">Ingredients: </span>
                         {ingredients.map((ingredient, index) => {
-                            return ingredient ? (
-                                <span key={index}>{ingredient}</span>
-                            ) : null;
+                            return ingredient ? <span key={index}>{ingredient}</span> : null;
                         })}
                     </p>
                 </div>
